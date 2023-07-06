@@ -1,6 +1,6 @@
-# eth-tx-sample
+# hedera-eth-tx-example
 
-This repository contains a script that use EtherJS to transfer hbar between 0x addresses on Hedera through JSON RPC Relay
+This repository contains a script that uses EtherJS to transfer hbar between 0x addresses on Hedera through JSON RPC Relay
 
 ## Prerequisite
 
@@ -21,4 +21,3 @@ npm install
 ```bash
 node index.js
 ```
-# hedera-eth-tx-example
