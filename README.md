@@ -12,7 +12,7 @@ node v16
 
 ```bash
 git clone git@github.com:pathornteng/hedera-eth-tx-example.git
-cd hedera-eth-tx-sample
+cd hedera-eth-tx-example
 npm install
 ```
 
