@@ -10,10 +10,14 @@ const main = async () => {
   console.log("Address", signer.address);
   let balance = await provider.getBalance(signer.address);
   console.log("Account balance", ethers.utils.formatEther(balance), "Hbar");
+  let nonce = await provider.getTransactionCount(signer.address); // get nonce from the system
+  console.log("Address nonce", nonce);
 
-  let receiverAddress = "0xB2576Fd98B4b717ecf9DC5C9901Cd839860e26EC";
+  let receiverAddress = "0x497eE4733Da289104B0816E3567A707927cbE112";
   // Ether amount to send
   let amountInHbar = "1"; // 1 hbar
+  let gasPrice = "1820000000000"; // minimum gas price
+  let gasLimit = "21000"; // minimum gas limit
   // Create a transaction object
   // console.log(ethers.utils.parseEther(amountInHbar).toString());
   let tx = {
@@ -24,6 +28,9 @@ const main = async () => {
     // 1 eth = 1_000_000_000_000_000_000 wei
     // You cannot transfer anything less then 1 tiny hbar or 10_000_000 wei
     value: ethers.utils.parseEther(amountInHbar),
+    gasPrice: gasPrice,
+    gasLimit: gasLimit,
+    nonce: nonce,
   };
   // Send a transaction
   const submittedTx = await signer.sendTransaction(tx);
