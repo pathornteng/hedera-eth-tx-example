@@ -31,6 +31,7 @@ const main = async () => {
     gasPrice: gasPrice,
     gasLimit: gasLimit,
     nonce: nonce,
+    from: signer.address,
   };
   // Send a transaction
   const submittedTx = await signer.sendTransaction(tx);
